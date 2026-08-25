@@ -21,7 +21,7 @@ The application was built with React and TypeScript, with Supabase providing a P
 - Ankylosaurus
 - Stegosaurus
 - Yutyrannus
-And many others
+- And many others
 
 # Features Planned for the Future
 - Images (with proper citations)
