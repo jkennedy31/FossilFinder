@@ -25,5 +25,5 @@ And many others
 
 # Features Planned for the Future
 - Images (with proper citations)
-- More information on each card
+- More in-depth information on each card
 - Broad search options (like searching "t rex" or "three horns", along those lines)
