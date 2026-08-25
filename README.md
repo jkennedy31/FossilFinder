@@ -12,18 +12,18 @@ Iguanodon
 Utahraptor
 
 # Species Planned for Implementation
--Therizinosaurus
--Spinosaurus
--Diabloceratops
--Sauroposeidon
--Brachiosaurus
--Argentinosaurus
--Ankylosaurus
--Stegosaurus
--Yutyrannus
+- Therizinosaurus
+- Spinosaurus
+- Diabloceratops
+- Sauroposeidon
+- Brachiosaurus
+- Argentinosaurus
+- Ankylosaurus
+- Stegosaurus
+- Yutyrannus
 And many others
 
 # Features Planned for the Future
--Images (with proper citations)
--More information on each card
--Broad search options (like searching "t rex" or "three horns", along those lines)
+- Images (with proper citations)
+- More information on each card
+- Broad search options (like searching "t rex" or "three horns", along those lines)
