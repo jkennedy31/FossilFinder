@@ -39,29 +39,32 @@ function App() {
   const [searchTerm, setSearchTerm] = useState<string>('')
   const [dinosaurs, setDinosaurs] = useState<Dinosaur[]>([])
 
-  async function handleSearch(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault()
+  async function searchArchive(term: string) {
+  const trimmedSearch = term.trim()
 
-    const trimmedSearch = searchTerm.trim()
-
-    if (!trimmedSearch) {
-      return
-    }
-
-    const { data, error } = await supabase
-      .from('dinosaurs')
-      .select('*')
-      .or(
-        `name.ilike.%${trimmedSearch}%,scientific_name.ilike.%${trimmedSearch}%,classification.ilike.%${trimmedSearch}%,diet.ilike.%${trimmedSearch}%,period.ilike.%${trimmedSearch}%`
-      )
-
-    if (error) {
-      console.error(error)
-      return
-    }
-
-    setDinosaurs(data ?? [])
+  if (!trimmedSearch) {
+    return
   }
+
+  const { data, error } = await supabase
+    .from('dinosaurs')
+    .select('*')
+    .or(
+      `name.ilike.%${trimmedSearch}%,scientific_name.ilike.%${trimmedSearch}%,classification.ilike.%${trimmedSearch}%,diet.ilike.%${trimmedSearch}%,period.ilike.%${trimmedSearch}%`
+    )
+
+  if (error) {
+    console.error(error)
+    return
+  }
+
+  setDinosaurs(data ?? [])
+}
+
+async function handleSearch(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault()
+  await searchArchive(searchTerm)
+}
 
   return (
     <main>
@@ -71,7 +74,7 @@ function App() {
         <h1>FossilFinder</h1>
 
         <p className="site-tagline">
-          Explore the lost worlds of prehistoric life.
+          Explore the lost world of prehistoric life.
         </p>
 
         <div className="header-ornament">
